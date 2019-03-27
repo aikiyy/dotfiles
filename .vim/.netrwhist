@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/aiki/.subversion'
+let g:netrw_dirhist_2='/Users/aiki/.pyenv'
+let g:netrw_dirhist_3='/Users/aiki/.gem'
+let g:netrw_dirhist_4='/Users/aiki/Documents/lab/201401_lscc/gimt'
+let g:netrw_dirhist_5='/Users/aiki/Code/MyWiki/source/_templates'
+let g:netrw_dirhist_6='/Users/aiki/Code/niconico_api'
+let g:netrw_dirhist_7='/Users/aiki/.vim/bundle/neobundle.vim'
+let g:netrw_dirhist_8='/Users/aiki/.pyenv'

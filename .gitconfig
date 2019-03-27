@@ -1,0 +1,8 @@
+[alias]
+	ch = checkout
+	l = log --all --graph --pretty='format:%C(yellow)%h%C(cyan)%d %C(red)%ar	%C(reset)%s'
+[core]
+	excludesfile = /Users/yogai/.gitignore_global
+[user]
+	name = aikiyy
+	email = aiki.yougai@gmail.com
