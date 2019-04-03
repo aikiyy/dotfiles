@@ -2,15 +2,23 @@
 # My setting
 # -----------------------------
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# gcloud
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yogai/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yogai/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yogai/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yogai/google-cloud-sdk/completion.zsh.inc'; fi
+
 #lsコマンド, 補完時の色を変更
 autoload -U compinit
 compinit
 
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-alias ls="ls -GF"
-alias gls="gls --color"
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
@@ -25,6 +33,14 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAU
 
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
+
+# alias
+alias ls="ls -GF"
+alias gls="gls --color"
+# merge済みリモートブランチの最新ログ確認
+alias gbrc="git branch -r --list --no-merged | grep -v '*' | xargs -Ibranch git log -1 --pretty=format:'|branch|%an|%ad|%s|' --date=short branch"
+# merge済みリモートブランチを削除
+alias grp="git remote prune origin"
 
 
 # -----------------------------
