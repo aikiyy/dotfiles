@@ -1,4 +1,51 @@
 # -----------------------------
+# zplug setting start
+# -----------------------------
+
+if [[ ! -d ~/.zplug ]];then
+  git clone https://github.com/zplug/zplug ~/.zplug
+fi
+
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
+zplug "tcnksm/docker-alias", use:zshrc
+zplug "k4rthik/git-cal", as:command, frozen:1
+zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*"
+
+# ZSH port of Fish shell's history search feature
+zplug "zsh-users/zsh-history-substring-search"
+
+# git alias
+zplug "plugins/git",   from:oh-my-zsh
+
+# A next-generation cd command with an interactive filter
+zplug "b4b4r07/enhancd"
+
+# タイプ補完
+zplug "zsh-users/zsh-autosuggestions"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=9'
+zplug "zsh-users/zsh-completions"
+zplug "chrissicool/zsh-256color"
+
+# Load theme file
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
+
+# -----------------------------
 # My setting
 # -----------------------------
 
@@ -34,7 +81,9 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAU
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
 
+# --------------
 # alias
+# --------------
 alias ls="ls -GF"
 alias gls="gls --color"
 # merge済みリモートブランチの最新ログ確認
@@ -42,48 +91,17 @@ alias gbrc="git branch -r --list --no-merged | grep -v '*' | xargs -Ibranch git 
 # merge済みリモートブランチを削除
 alias grp="git remote prune origin"
 
-
-# -----------------------------
-# zplug setting start
-# -----------------------------
-
-if [[ ! -d ~/.zplug ]];then
-  git clone https://github.com/zplug/zplug ~/.zplug
-fi
-
-source ~/.zplug/init.zsh
-
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
-zplug "tcnksm/docker-alias", use:zshrc
-zplug "k4rthik/git-cal", as:command, frozen:1
-zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*"
-
-# ZSH port of Fish shell's history search feature
-zplug "zsh-users/zsh-history-substring-search"
-
-# git alias
-zplug "plugins/git",   from:oh-my-zsh
-
-# A next-generation cd command with an interactive filter
-zplug "b4b4r07/enhancd"
-
-# タイプ補完
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "chrissicool/zsh-256color"
-
-# Load theme file
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load --verbose
+# --------------
+# 履歴関連の設定
+# --------------
+HISTFILE=~/.zsh_history #履歴ファイルの設定
+HISTSIZE=1000000 # メモリに保存される履歴の件数。(保存数だけ履歴を検索できる)
+SAVEHIST=1000000 # ファイルに何件保存するか
+setopt share_history # 別のターミナルでも履歴を参照できるようにする
+setopt hist_ignore_all_dups # 過去に同じ履歴が存在する場合、古い履歴を削除し重複しない
+setopt hist_ignore_space # コマンド先頭スペースの場合保存しない
+setopt hist_reduce_blanks #余分なスペースを削除してヒストリに記録する
+setopt hist_save_no_dups # histryコマンドは残さない
+setopt hist_expire_dups_first # 古い履歴を削除する必要がある場合、まず重複しているものから削除
+setopt hist_expand # 補完時にヒストリを自動的に展開する
+setopt inc_append_history # 履歴をインクリメンタルに追加
