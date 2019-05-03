@@ -112,3 +112,5 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 colorscheme molokai
 " 構文毎に文字色を変化させる
 syntax on
+" set encodint
+set encoding=utf-8

@@ -54,6 +54,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# node
+export PATH=$PATH:$HOME/.nodebrew/current/bin
+
 # gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/yogai/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yogai/google-cloud-sdk/path.zsh.inc'; fi
@@ -90,6 +93,14 @@ alias gls="gls --color"
 alias gbrc="git branch -r --list --no-merged | grep -v '*' | xargs -Ibranch git log -1 --pretty=format:'|branch|%an|%ad|%s|' --date=short branch"
 # merge済みリモートブランチを削除
 alias grp="git remote prune origin"
+# 
+alias gs="git status"
+# merge済みブランドを削除
+alias dmb="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+# 容量の大きいディレクトリを出力
+alias show-dir-volume="sudo du -g -x -d 5 / | awk '$1 >= 3{print}'"
+# postgresqlを起動
+alias psql-start="postgres -D /usr/local/var/postgres"
 
 # --------------
 # 履歴関連の設定
