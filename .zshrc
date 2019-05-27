@@ -101,6 +101,13 @@ alias dmb="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias show-dir-volume="sudo du -g -x -d 5 / | awk '$1 >= 3{print}'"
 # postgresqlを起動
 alias psql-start="postgres -D /usr/local/var/postgres"
+# Get images 
+alias di="docker images"
+# Get container process
+alias dps="docker ps"
+# Execute interactive cnotainer
+alias dex="docker exec -it"
+
 
 # --------------
 # 履歴関連の設定
