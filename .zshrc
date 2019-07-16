@@ -51,8 +51,17 @@ zplug load --verbose
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -d "$PYENV_ROOT" ]; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
+# rbenv
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d "$RBENV_ROOT" ]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 # node
 export PATH=$PATH:$HOME/.nodebrew/current/bin
@@ -105,6 +114,8 @@ alias psql-start="postgres -D /usr/local/var/postgres"
 alias di="docker images"
 # Get container process
 alias dps="docker ps"
+# Get image history
+alias dh="docker history"
 # Execute interactive cnotainer
 alias dex="docker exec -it"
 
