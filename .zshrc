@@ -93,6 +93,9 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAU
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
 
+# make path unique
+typeset -U path PATH
+
 # --------------
 # alias
 # --------------
