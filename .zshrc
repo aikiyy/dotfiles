@@ -1,3 +1,8 @@
+# 初回シェル時のみ tmux実行
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
+
 # -----------------------------
 # zplug setting start
 # -----------------------------
@@ -121,6 +126,10 @@ alias dps="docker ps"
 alias dh="docker history"
 # Execute interactive cnotainer
 alias dex="docker exec -it"
+
+# tmux
+alias t="tmux"
+alias tn="tmux new -s"
 
 
 # --------------
