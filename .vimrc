@@ -54,9 +54,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ファイルをtree表示する
 NeoBundle 'scrooloose/nerdtree'
 
-" Rails向けにendを自動挿入する
-NeoBundle 'tpope/vim-endwise'
-
 " インデントに色を付けて見やすくする
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
@@ -65,6 +62,13 @@ NeoBundle 'tomtom/tcomment_vim'
 
 " カラースキーマ
 NeoBundle 'tomasr/molokai'
+
+" syntax check
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+
+" 自動的に閉じ括弧
+NeoBundle 'cohama/lexima.vim'
 
 " コード補完
 NeoBundle 'Shougo/neocomplete'
@@ -90,14 +94,6 @@ if has("autocmd")
 	\ 	exe "normal! h'\"" |
 	\ endif
 endif
-""""""""""""""""""""
-
-""""""""""""""""""""
-" 自動的に閉じ括弧を入力
-""""""""""""""""""""
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
 """"""""""""""""""""
 
 """"""""""""""""""""
