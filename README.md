@@ -1,12 +1,17 @@
 dotfileの管理リポジトリ（主にvim）
 ====
 
+## Requirement
+```
+$ brew install tmux
+```
+
 ## Install
 ```
-git clone git@github.com:aiki-y/dotfiles.git
-cd dotfiles
-bash dotfilesLink.sh
-bash install.sh
+$ git clone git@github.com:aiki-y/dotfiles.git
+$ cd dotfiles
+$ bash dotfilesLink.sh
+$ bash install.sh
 ```
 vimを開き
 ```
