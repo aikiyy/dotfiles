@@ -123,5 +123,9 @@ nmap <Tab> :tabnext<Return>
 colorscheme molokai
 " 構文毎に文字色を変化させる
 syntax on
+" コメントアウトの文字色を指定
+hi Comment ctermfg=102
+" 選択範囲の色を指定
+hi Visual ctermbg=236
 " set encodint
 set encoding=utf-8
