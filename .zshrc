@@ -13,6 +13,10 @@ fi
 
 source ~/.zplug/init.zsh
 
+# Load theme file
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
 zplug "tcnksm/docker-alias", use:zshrc
@@ -33,10 +37,6 @@ zplug "zsh-users/zsh-autosuggestions"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=9'
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
-
-# Load theme file
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -77,14 +77,14 @@ if [ -f '/Users/yogai/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yogai/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/yogai/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yogai/google-cloud-sdk/completion.zsh.inc'; fi
 
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
+export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:'
+
 #lsコマンド, 補完時の色を変更
 autoload -U compinit
 compinit
-
-export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+zstyle ':completion:*' list-colors "${LS_COLORS}"
 
 # 補完関数の表示を強化する
 zstyle ':completion:*' verbose yes
