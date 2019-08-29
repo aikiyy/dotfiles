@@ -130,6 +130,7 @@ alias dex="docker exec -it"
 # tmux
 alias t="tmux"
 alias tn="tmux new -s"
+alias t-reload="tmux source ~/.tmux.conf"
 
 
 # --------------
