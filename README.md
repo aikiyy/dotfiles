@@ -2,8 +2,20 @@ dotfileの管理リポジトリ（主にvim）
 ====
 
 ## Requirement
+[macへhomebrewをインストールする](https://brew.sh/index_ja.html)
 ```
 $ brew install tmux
+$ brew install zsh
+```
+
+## Shell
+shellをzshに変更する
+```
+$ sudo vi /etc/shells
+最後の行に以下を追加
+/usr/local/bin/zsh
+
+$ chsh -s /usr/local/bin/zsh
 ```
 
 ## Install
