@@ -38,6 +38,8 @@ set smarttab
 filetype on
 " tabキーをスペースにする
 set expandtab
+"
+set backspace=indent,eol,start
 """"""""""""""""""""
 
 
@@ -69,6 +71,25 @@ let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
 " 自動的に閉じ括弧
 NeoBundle 'cohama/lexima.vim'
+
+" Gitのラッパープラグイン
+NeoBundle 'tpope/vim-fugitive'
+
+" Python補完
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundleLazy "davidhalter/jedi-vim", {
+  \ "autoload": {
+  \   "filetypes": ["python", "python3", "djangohtml"],
+  \ },
+  \ "build" : {
+  \   "mac"  : "pip install jedi",
+  \   "unix" : "pip install jedi",
+  \ }}
+let g:jedi#rename_command = '<Leader>R'
+let g:jedi#goto_assignments_command = '<Leader>G'
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
 
 " コード補完
 NeoBundle 'Shougo/neocomplete'
