@@ -96,6 +96,11 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
+" Realtime Markdown Preview
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
 filetype plugin indent on
 filetype indent on
 
@@ -134,6 +139,17 @@ map sl <C-w>l
 nmap <S-Tab> :tabprev<Return>
 nmap <Tab> :tabnext<Return>
 """"""""""""""""""""
+
+"""""""""""""""""""""""""
+" markdown plugin setting
+"""""""""""""""""""""""""
+autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
+autocmd BufRead,BufNewFile *.md  set filetype=markdown
+" Need: kannokanno/previm
+nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
+" 自動で折りたたまないようにする
+let g:vim_markdown_folding_disabled=1
+let g:previm_enable_realtime = 1
 
 
 " カラースキーマの指定
