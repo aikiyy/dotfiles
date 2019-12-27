@@ -110,7 +110,7 @@ alias gls="gls --color"
 alias gbrc="git branch -r --list --no-merged | grep -v '*' | xargs -Ibranch git log -1 --pretty=format:'|branch|%an|%ad|%s|' --date=short branch"
 # merge済みリモートブランチを削除
 alias grp="git remote prune origin"
-# 
+# git status
 alias gs="git status"
 # merge済みブランドを削除
 alias dmb="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
@@ -126,6 +126,10 @@ alias dps="docker ps"
 alias dh="docker history"
 # Execute interactive cnotainer
 alias dex="docker exec -it"
+# Delete paused containers
+alias dcrm="docker rm $(docker ps -f status=exited -f status=created -f status=dead -f status=paused -q)"
+# Delete none images
+alias dirm="docker rmi $(docker images -f dangling=true -q)"
 
 # tmux
 alias t="tmux"
