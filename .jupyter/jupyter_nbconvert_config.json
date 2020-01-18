@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "Exporter": {
+    "template_path": [
+      "/Users/yougai/.pyenv/versions/anaconda3-5.3.1/lib/python3.7/site-packages/jupyter_contrib_nbextensions/templates"
+    ],
+    "preprocessors": [
+      "jupyter_contrib_nbextensions.nbconvert_support.CodeFoldingPreprocessor",
+      "jupyter_contrib_nbextensions.nbconvert_support.PyMarkdownPreprocessor"
+    ]
+  }
+}
