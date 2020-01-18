@@ -70,6 +70,8 @@ fi
 
 # node
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # gcloud
 # The next line updates PATH for the Google Cloud SDK.
@@ -126,6 +128,10 @@ alias dps="docker ps"
 alias dh="docker history"
 # Execute interactive cnotainer
 alias dex="docker exec -it"
+# Delete paused containers
+alias dcrm="docker rm $(docker ps -f status=exited -f status=created -f status=dead -f status=paused -q)"
+# Delete none images
+alias dirm="docker rmi $(docker images -f dangling=true -q)"
 
 # tmux
 alias t="tmux"
