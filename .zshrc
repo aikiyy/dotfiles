@@ -70,6 +70,8 @@ fi
 
 # node
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # gcloud
 # The next line updates PATH for the Google Cloud SDK.
