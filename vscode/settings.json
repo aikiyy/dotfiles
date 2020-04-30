@@ -50,5 +50,6 @@
         "editor.insertSpaces": true
     },
     "git.autofetch": true,
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "sync.gist": "b18178e9cf5500ce37e53be4ab418795"
 }
