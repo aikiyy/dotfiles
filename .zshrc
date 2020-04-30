@@ -75,9 +75,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # gcloud
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yogai/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yogai/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/yogai/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yogai/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
