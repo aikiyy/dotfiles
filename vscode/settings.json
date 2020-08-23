@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 12,
+    "editor.fontSize": 14,
     "editor.fontWeight": "500",
     "editor.lineHeight": 0,
     "editor.cursorStyle": "line", // カーソルのスタイル
@@ -9,6 +9,7 @@
     "editor.insertSpaces": true,
     "editor.renderWhitespace": "boundary",
     "editor.formatOnType": true, // 区切り文字をタイプしたときに自動でフォーマットする
+    "editor.formatOnSave": true, // ファイル保存時に自動整形する
     "editor.formatOnPaste": true, // 貼り付けしたときに自動でフォーマットする
     "terminal.integrated.inheritEnv": false,
     "terminal.integrated.copyOnSelection": true, // ターミナルでのコピーを許可する
@@ -19,19 +20,22 @@
         "**/node_modules": true
     },
     "workbench.colorTheme": "Dracula", // 配色テーマ
-    "python.linting.lintOnSave": true,
-    "python.linting.pylintEnabled": false,
-    "python.linting.pycodestyleEnabled": false,
-    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true, // Lint機能を有効にする
+    "python.linting.lintOnSave": true, // ファイル保存時にLintを実行
+    "python.linting.pylintEnabled": false, // Linterとしてpylintを無効にする
+    "python.linting.pycodestyleEnabled": false, // Linterとしてpycodestyleを無効にする
+    "python.linting.flake8Enabled": true, // Linterとしてflake8を有効にする
     "python.linting.flake8Args": [
         "--ignore=W293, W504",
         "--max-line-length=150",
         "--max-complexity=20"
     ],
-    "python.formatting.provider": "autopep8",
+    "python.formatting.provider": "autopep8", // コード整形に使用するもの
     "python.formatting.autopep8Args": [
-        "--aggressive", "--aggressive",
+        "--aggressive",
+        "--aggressive",
     ],
+    "python.jediEnabled": false,
     "autoDocstring.docstringFormat": "google",
     "[python]": {
         "editor.detectIndentation": false, // ファイルを開くときにインデントを自動的に検出するか
@@ -50,6 +54,7 @@
         "editor.insertSpaces": true
     },
     "git.autofetch": true,
-    "python.jediEnabled": false,
-    "sync.gist": "b18178e9cf5500ce37e53be4ab418795"
+    "sync.gist": "b18178e9cf5500ce37e53be4ab418795",
+    "workbench.iconTheme": "material-icon-theme",
+    "python.languageServer": "Microsoft"
 }
