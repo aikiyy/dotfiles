@@ -1,6 +1,7 @@
 [alias]
 	ch = checkout
 	l = log --all --graph --pretty='format:%C(yellow)%h%C(cyan)%d %C(red)%ar	%C(reset)%s'
+    openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 [user]
 	name = aikiyy
-	email = aikiyy@​users​.noreply​.github​.com
+	email = aikiyy@users.noreply.github.com
