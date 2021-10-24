@@ -5,3 +5,5 @@
 [user]
 	name = aikiyy
 	email = aikiyy@users.noreply.github.com
+[init]
+	defaultBranch = main
