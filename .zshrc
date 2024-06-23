@@ -54,6 +54,9 @@ zplug load --verbose
 # My setting
 # -----------------------------
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT" ]; then
