@@ -68,15 +68,18 @@ if [ -d "$RBENV_ROOT" ]; then
   eval "$(rbenv init -)"
 fi
 
+# rye
+export RYE_ROOT="$HOME/.rye"
+if [ -d "$RYE_ROOT" ]; then
+  source "$RYE_ROOT/env"
+fi
+
 # node
 export PATH=$PATH:$HOME/.nodebrew/current/bin
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# gcloud
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
+# gcloud# The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
 export CLICOLOR=1
@@ -153,3 +156,9 @@ setopt hist_save_no_dups # histryコマンドは残さない
 setopt hist_expire_dups_first # 古い履歴を削除する必要がある場合、まず重複しているものから削除
 setopt hist_expand # 補完時にヒストリを自動的に展開する
 setopt inc_append_history # 履歴をインクリメンタルに追加
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yougai/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yougai/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yougai/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yougai/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
